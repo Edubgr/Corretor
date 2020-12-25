@@ -13,7 +13,7 @@ document.querySelector('#submit').onclick = function(){
     }).then(function(res) {
         res.blob().then(function(resq){
             var fileURL = URL.createObjectURL(resq)
-            document.querySelector('#img').data = fileURL
+            document.querySelector('#img').src = fileURL
         });
     });
 }
