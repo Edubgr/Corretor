@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
     var dataToSend;
     var data = req.body;
     console.log(data)
-    const python = spawn('python3', ['public/python/pdf.py', data.nSchool, data.nSubject, data.nProf,data.nQue]);
+    const python = spawn('python3', ['environments/pdf.py', data.nSchool, data.nSubject, data.nProf,data.nQue]);
     python.stdout.on('data', function (data) {
         dataToSend = data.toString();
     });
