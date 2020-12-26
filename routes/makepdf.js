@@ -20,6 +20,9 @@ router.post('/', (req, res) => {
         res.contentType('application/pdf')
         file.pipe(res);
     });
+    python.stderr.on('data', (data) => {
+        console.error(`stderr: ${data}`);
+      });
 });
 
 module.exports = router;
